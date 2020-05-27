@@ -28,7 +28,9 @@ setup(
         'django_qrcodes.utils',
     ],
     install_requires=[
-        'Django>=2.2',
+        'Django',
+        'qrcode',
+        'Pillow',
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
