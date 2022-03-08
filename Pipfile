@@ -3,12 +3,14 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
-setuptools = "*"
-
 [packages]
 django = "*"
-qrcode = {extras = ["pil"],version = "*"}
+qrcode = { extras = ["pil"], version = "*" }
+
+[dev-packages]
+setuptools = "*"
+flake8 = "*"
+black = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

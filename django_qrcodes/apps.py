@@ -1,7 +1,9 @@
-from django.apps import AppConfig as BaseAppConfig
+from django.apps import AppConfig
 
 
-class AppConfig(BaseAppConfig):
+class SimpelQrcodeConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
     name = 'django_qrcodes'
     label = 'django_qrcodes'
-    verbose_name = 'QR Codes'
+    verbose_name = "QR Code"
+    icon = "qrcode-scan"

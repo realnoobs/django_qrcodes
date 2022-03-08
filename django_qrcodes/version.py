@@ -29,11 +29,11 @@ def get_main_version(version=None):
 
 def get_complete_version(version=None):
     """
-    Return a tuple of the Wagtail version. If version argument is non-empty,
+    Return a tuple of the version. If version argument is non-empty,
     check for correctness of the tuple provided.
     """
     if version is None:
-        from wagtail import VERSION as version
+        from django_qrcodes import VERSION as version
     else:
         assert len(version) == 5
         assert version[3] in ('dev', 'alpha', 'beta', 'rc', 'final')

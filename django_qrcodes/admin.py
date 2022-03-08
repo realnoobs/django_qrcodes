@@ -1,11 +1,15 @@
 from django.contrib import admin
-from django.utils.html import format_html
+from django.contrib.contenttypes.admin import GenericTabularInline
+from django_qrcodes.models import LinkedQRCode
 
-class QRCodeAdminMixin(admin.ModelAdmin):
 
-    def qrcode_thumbnail(self, obj):
-        return format_html("<img src='%s' style='height:32px; width='32px' />" % obj.qrcode.url)
+class LinkedQRCodeInline(GenericTabularInline):
+    ct_field = "linked_object_type"
+    ct_fk_field = "linked_object_id"
+    model = LinkedQRCode
+    extra = 1
 
-    def get_list_display(self, request):
-        list_display = super(QRCodeAdminMixin, self).get_list_display(request)
-        return ['qrcode_thumbnail'] + list_display
+
+@admin.register(LinkedQRCode)
+class LinkedQRCodeAdmin(admin.ModelAdmin):
+    list_display = ["linked_object", "qrcode"]
