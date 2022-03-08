@@ -11,6 +11,7 @@ qrcode = { extras = ["pil"], version = "*" }
 setuptools = "*"
 flake8 = "*"
 black = "*"
+flit = "*"
 
 [requires]
 python_version = "3.8"
