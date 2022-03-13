@@ -14,7 +14,7 @@ from django.utils.translation import gettext_lazy as _
 import qrcode
 from PIL import Image
 
-DEFAULT_LOGO = Path(__file__).parent / "static" / "img" / "qr_logo.png"
+DEFAULT_LOGO = Path(__file__).parent / "static" / "qrcodes" / "img" / "qr_logo.png"
 
 QR_LOGO = getattr(settings, "QR_LOGO", DEFAULT_LOGO)
 
